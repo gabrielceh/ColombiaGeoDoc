@@ -4,7 +4,7 @@ import styles from './features-section.module.css';
 export function FeaturesSection() {
   return (
     <section className={styles.features}>
-      <div className='container'>
+      <div className={styles.container}>
         <div className={styles.sectionHeader}>
           <span>¿Qué puedes hacer?</span>
 
@@ -16,18 +16,18 @@ export function FeaturesSection() {
           </p>
         </div>
 
-        <div className={styles.featureGrid}>
-          {
-            features.map((feature) => (
-              <article className={styles.featureCard} key={feature.title}>
-                <div className={styles.featureIcon}>
-                  <feature.icon size={24} strokeWidth={1.8} />
-                </div>
+        <div className={styles.grid}>
+          {features.map((feature) => (
+            <article className={styles.card} key={feature.title}>
+              <div className={styles.icon}>
+                <feature.icon size={24} strokeWidth={1.8} />
+              </div>
+              <div>
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
-              </article>
-            ))
-          }
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
