@@ -24,20 +24,20 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'category',
-      label: 'Resources',
+      label: 'Recursos',
       items: ['departments', 'cities'],
     },
 
     {
       type: 'category',
-      label: 'Features',
-      items: ['search', 'pagination'],
+      label: 'Guias',
+      items: ['search', 'pagination', 'responses'],
     },
 
     {
       type: 'category',
       label: 'Reference',
-      items: ['responses', 'infrastructure'],
+      items: ['infrastructure'],
     },
   ],
 };

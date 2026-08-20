@@ -18,13 +18,7 @@ Obtiene todos los departamentos disponibles.
 GET /departments
 ```
 
-### URL completa
-
-```text
-https://colombiageoapi.onrender.com/api/v1/departments
-```
-
-### Request
+### Parámetros
 
 Este endpoint no requiere parámetros.
 
@@ -34,7 +28,7 @@ Este endpoint no requiere parámetros.
 GET /departments
  ```
 
-### Response
+### Respuesta
 
 ```json
 {
@@ -70,11 +64,11 @@ Obtiene información detallada de un departamento utilizando su identificador.
 GET /departments/{id}
 ```
 
-### Parameters
+### Parámetros
 
-|Parámetro|Tipo|Requerido|Descripción|
-|---|---|---|---|
-|`id`|UUID|Sí|Identificador único del departamento|
+|Parámetro|Tipo|Requerido|Descripción                         |
+|---------|----|---------|------------------------------------|
+|`id`     |UUID|Sí       |Identificador único del departamento|  
 
 ### Ejemplo
 
@@ -82,7 +76,7 @@ GET /departments/{id}
 GET /departments/7b672475-1afc-4617-b118-c2b8efd61709
 ```
 
-### Response
+### Respuesta
 
 ```json
 {
@@ -140,7 +134,7 @@ GET /departments/paged
 GET /departments/paged?page=1&pageSize=10&sortBy=name&sortDirection=asc
 ```
 
-### Response
+### Respuesta
 
 ```json
 {
@@ -182,7 +176,7 @@ GET /departments/paged?page=1&pageSize=10&sortBy=name&sortDirection=asc
 
 Puedes utilizar `sortDirection=asc` para ordenar ascendentemente o `sortDirection=desc` para ordenar descendentemente.
 
-### sortBy
+### `sortBy`
 
 |Parámetro       |Descripción                         |
 |----------------|------------------------------------|
@@ -194,7 +188,7 @@ Puedes utilizar `sortDirection=asc` para ordenar ascendentemente o `sortDirectio
 
 ---
 
-## HTTP status codes
+## Códigos de estado HTTP
 
 |Status|Description                    |
 |------|-------------------------------|
