@@ -1,0 +1,85 @@
+---
+sidebar_position: 2
+---
+
+import HttpMethod from '@site/src/components/Shared/HttpMethod';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+:::info
+Consulta [Infraestructura y disponibilidad](./infrastructure) para conocer las limitaciones actuales del entorno.
+:::
+
+# Getting Started
+
+Realizar una solicitud a Colombia Geo API es sencillo. Todos los endpoints públicos utilizan HTTP y devuelven información en formato JSON.
+
+## Base URL
+
+```text
+https://colombiageoapi.onrender.com/api/v1
+```
+
+## Tu primera petición
+
+Para comenzar, puedes consultar todos los departamentos disponibles:
+
+
+<HttpMethod method="GET">/departments</HttpMethod>
+
+
+La URL completa sería:
+
+```text
+https://colombiageoapi.onrender.com/api/v1/departments
+```
+
+<Tabs>
+  <TabItem value="curl" label="cURL" default>
+    ```bash
+    curl https://colombiageoapi.onrender.com/api/v1/departments
+    ```
+  </TabItem>
+
+  
+  <TabItem value="js" label="JavaScript">
+    ```js
+    const response = await fetch('https://colombiageoapi.onrender.com/api/v1/departments');
+    const data = await response.json();
+    console.log(data);
+    ```
+  </TabItem>
+
+  <TabItem value="csharp" label="C#">
+    ```csharp
+    using HttpClient client = new();
+    var response = await client.GetAsync("https://colombiageoapi.onrender.com/api/v1/departments");
+    var data = await response.Content.ReadAsStringAsync();
+    Console.WriteLine(data);
+    ```
+  </TabItem>
+
+  <TabItem value="python" label="Python">
+    ```python
+    import requests
+
+    response = requests.get("https://colombiageoapi.onrender.com/api/v1/departments")
+    data = response.json()
+    print(data)
+    ```
+  </TabItem>
+</Tabs>
+
+---
+
+## Respuesta
+
+Una solicitud exitosa devuelve una respuesta JSON con la siguiente estructura:
+
+```json
+{
+  "data": [],
+  "message": "Departments retrieved successfully.",
+  "statusCode": 200
+}
+```

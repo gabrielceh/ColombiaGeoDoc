@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 ---
+import HttpMethod from '@site/src/components/Shared/HttpMethod';
 
 # Departamentos
 
@@ -14,9 +15,7 @@ Obtiene todos los departamentos disponibles.
 
 ### Endpoint
 
-```http
-GET /departments
-```
+<HttpMethod method="GET">/departments</HttpMethod>
 
 ### Parámetros
 
@@ -24,9 +23,7 @@ Este endpoint no requiere parámetros.
 
 ### Ejemplo
 
-```httph
-GET /departments
- ```
+<HttpMethod method="GET">/departments</HttpMethod>
 
 ### Respuesta
 
@@ -60,9 +57,8 @@ Obtiene información detallada de un departamento utilizando su identificador.
 
 ### Endpoint
 
-```http
-GET /departments/{id}
-```
+<HttpMethod method="GET">/departments/:id</HttpMethod>
+
 
 ### Parámetros
 
@@ -114,9 +110,8 @@ Obtiene departamentos utilizando paginación y ordenamiento.
 
 ### Endpoint
 
-```http
-GET /departments/paged
-```
+<HttpMethod method="GET">/departments/paged</HttpMethod>
+
 
 ### Query parameters
 

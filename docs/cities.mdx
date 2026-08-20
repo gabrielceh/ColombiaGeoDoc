@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 ---
+import HttpMethod from '@site/src/components/Shared/HttpMethod';
 
 # Ciudades
 
@@ -14,9 +15,8 @@ Obtiene información detallada de una ciudad utilizando su identificador único.
 
 ### Endpoint
 
-```http
-GET /cities/{id}
-```
+<HttpMethod method="GET">/cities/:id</HttpMethod>
+
 
 ### Parámetros
 
@@ -26,7 +26,9 @@ GET /cities/{id}
 
 ### Ejemplo
 
+```http
 GET /cities/7b672475-1afc-4617-b118-c2b8efd61709
+```
 
 ### Respuesta
 
@@ -65,9 +67,8 @@ Obtiene todas las ciudades pertenecientes a un departamento específico.
 
 ### Endpoint
 
-```http
-GET /cities/department/{departmentId}
-```
+<HttpMethod method="GET">/cities/department/:departmentId</HttpMethod>
+
 
 ### Parámetros
 
@@ -107,9 +108,8 @@ Permite obtener las ciudades de un departamento utilizando paginación y ordenam
 
 ### Endpoint
 
-```http
-GET /cities/paged/department/{departmentId}
-```
+<HttpMethod method="GET">/cities/paged/department/:departmentId</HttpMethod>
+
 
 ### Parámetros
 
@@ -123,7 +123,9 @@ GET /cities/paged/department/{departmentId}
 
 ### Ejemplo
 
+```http
 GET /cities/paged/department/7b672475-1afc-4617-b118-c2b8efd61709?page=1&pageSize=10&sortBy=name&sortDirection=asc
+```
 
 ### Respuesta
 
@@ -169,9 +171,8 @@ Obtiene todas las ciudades disponibles utilizando paginación.
 
 ### Endpoint
 
-```http
-GET /cities/paged
-```
+<HttpMethod method="GET">/cities/paged</HttpMethod>
+
 
 ### Parámetros
 
@@ -184,7 +185,9 @@ GET /cities/paged
 
 ### Ejemplo
 
+```http
 GET /cities/paged?page=1&pageSize=20&sortBy=name&sortDirection=asc
+```
 
 ### Respuesta
 
@@ -230,9 +233,7 @@ Obtiene las ciudades que tienen la condición de distrito.
 
 ### Endpoint
 
-```http
-GET /cities/districts
-```
+<HttpMethod method="GET">/cities/districts</HttpMethod>
 
 ### Ejemplo
 
@@ -283,9 +284,7 @@ Obtiene todas las ciudades que están marcadas como capitales de departamento.
 
 ### Endpoint
 
-```http
-GET /cities/capitals
-```
+<HttpMethod method="GET">/cities/capitals</HttpMethod>
 
 ### Ejemplo
 
@@ -337,7 +336,7 @@ Permite buscar ciudades utilizando su nombre o código DANE.
 
 ### Endpoint
 
-GET /cities/search?value=001&pageSize=20&page=1&sortBy=population&sortDirection=desc
+<HttpMethod method="GET">/cities/search</HttpMethod>
 
 ### Query parameters
 
