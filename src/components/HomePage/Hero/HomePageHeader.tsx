@@ -1,14 +1,19 @@
-import { Map } from 'lucide-react';
-import styles from './home-page-header.module.css';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+import { ChevronRight, Map } from 'lucide-react';
 import Link from '@docusaurus/Link';
 
+import styles from './home-page-header.module.css';
+
 export function HomepageHeader() {
+  const { siteConfig } = useDocusaurusContext();
+
   return (
     <header className={styles.hero}>
-      <div className='container'>
+      <div className={styles.container}>
         <div className={styles.badge}>
           <Map size={16} strokeWidth={2} />
-          <span>Colombia Geo API</span>
+          <span>{siteConfig.title}</span>
         </div>
 
         <h1 className={styles.title}>
@@ -24,7 +29,8 @@ export function HomepageHeader() {
 
         <div className={styles.buttons}>
           <Link className='button button--primary button--lg' to='/docs/intro'>
-            Empezar ahora →
+            Empezar ahora
+            <ChevronRight size={16} strokeWidth={2} />
           </Link>
 
           <Link
