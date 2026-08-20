@@ -75,7 +75,7 @@ const config: Config = {
           label: 'Documentación',
         },
         {
-          href: 'https://colombiageoapi.onrender.com',
+          href: 'https://mis-docs.com',
           label: 'API',
           position: 'right',
         },
