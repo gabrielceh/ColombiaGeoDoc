@@ -104,18 +104,14 @@ const config: Config = {
         {
           title: 'API',
           items: [
-            // {
-            //   label: 'Endpoints',
-            //   href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            // },
-            // {
-            //   label: 'Discord',
-            //   href: 'https://discordapp.com/invite/docusaurus',
-            // },
-            // {
-            //   label: 'X',
-            //   href: 'https://x.com/docusaurus',
-            // },
+            {
+              label: 'Endpoints',
+              to: '/docs/endpoints',
+            },
+            {
+              label: 'Respuestas',
+              to: '/docs/responses',
+            },
           ],
         },
       ],
