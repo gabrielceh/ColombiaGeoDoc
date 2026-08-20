@@ -1,1 +1,167 @@
-# Coming soon
+---
+sidebar_position: 4
+---
+
+# Paginación y ordenamiento
+
+Los endpoints paginados de Colombia Geo API permiten controlar la cantidad de resultados devueltos y el orden en el que se presentan.
+
+Esto resulta especialmente útil cuando se trabaja con grandes cantidades de ciudades o departamentos.
+
+## Parámetros de paginación
+
+Los endpoints paginados utilizan los siguientes parámetros:
+
+| Parámetro  | Tipo    | Valor por defecto | Descripción                             |  
+|------------|---------|-------------------|-----------------------------------------|
+| `page`     | integer | `1`               | Número de página que se desea consultar |  
+| `pageSize` | integer | `20`              | Cantidad de elementos por página        |
+
+### `page`
+
+Indica qué página de resultados se desea obtener.
+
+```http
+GET /cities/paged?page=2
+```
+
+En este ejemplo se solicita la segunda página.
+
+### `pageSize`
+
+Indica cuántos elementos puede contener cada página.
+
+```http
+GET /cities/paged?page=1&pageSize=10
+```
+
+En este ejemplo se solicitan hasta 10 elementos por página.
+
+Utiliza un `pageSize` adecuado para evitar respuestas innecesariamente grandes.
+
+---
+
+## Ordenamiento
+
+Además de la paginación, los endpoints permiten ordenar los resultados.
+
+Se utilizan dos parámetros:
+
+|Parámetro      |Tipo  |Descripción                 |
+|---------------|------|----------------------------|
+|`sortBy`       |string|Campo utilizado para ordenar|
+|`sortDirection`|string|Dirección del ordenamiento  |
+
+## `sortDirection`
+
+Admite dos valores:
+
+|Valor |Descripción      |
+|------|-----------------|
+|`asc` |Orden ascendente |
+|`desc`|Orden descendente|
+
+### Ejemplo ascendente
+
+```http
+GET /cities/paged?page=1&pageSize=10&sortBy=name&sortDirection=asc
+```
+
+Los resultados se ordenan de forma ascendente por nombre.
+
+### Ejemplo descendente
+
+```http
+GET /cities/paged?page=1&pageSize=10&sortBy=population&sortDirection=desc
+```
+
+Los resultados se ordenan de mayor a menor población.
+
+---
+
+## `sortBy`
+
+El valor de `sortBy` determina el campo utilizado para ordenar los resultados.
+
+### Departamentos
+
+Los campos disponibles son:
+
+|Valor           |Descripción            |
+|----------------|-----------------------|
+|`name`          |Nombre del departamento|
+|`daneCode`      |Código DANE            |
+|`population`    |Población              |
+|`area`          |Área                   |
+|`municipalities`|Cantidad de municipios |
+
+### Ciudades
+
+Los campos disponibles dependen del endpoint y de los criterios de ordenamiento implementados.
+
+Entre ellos se encuentran:
+
+|Valor           |Descripción            |
+|----------------|-----------------------|
+|`name`          |Nombre del departamento|
+|`daneCode`      |Código DANE            |
+|`population`    |Población              |
+|`area`          |Área                   |
+
+Los valores disponibles para `sortBy` pueden variar según el recurso consultado.
+
+---
+
+## Ejemplo completo
+
+Puedes combinar todos los parámetros:
+
+GET /cities/paged?page=2&pageSize=10&sortBy=population&sortDirection=desc
+
+Esta solicitud:
+
+1. Obtiene la segunda página.
+2. Solicita hasta 10 ciudades.
+3. Ordena por población.
+4. Ordena de mayor a menor.
+
+## Respuesta paginada
+
+Las respuestas paginadas contienen información adicional para conocer el estado de la consulta.
+
+```json
+{
+  "data": {
+    "items": [...],
+    "page": 1,
+    "pageSize": 10,
+    "totalCount": 1100,
+    "totalPages": 110
+  },
+  "message": "Request completed successfully",
+  "statusCode": 200
+}
+```
+
+### Propiedades
+
+|Propiedad   |Descripción                                  |  
+|------------|---------------------------------------------|
+|`items`     |Elementos correspondientes a la página actual|
+|`page`      |Página actual                                |
+|`pageSize`  |Cantidad solicitada por página               |
+|`totalCount`|Cantidad total de elementos                  |  
+|`totalPages`|Cantidad total de páginas                    |
+
+## Recursos paginados
+
+Actualmente puedes utilizar paginación en:
+
+- Departamentos
+- Ciudades
+- Ciudades por departamento
+
+Consulta la documentación de cada recurso para conocer sus endpoints específicos:
+
+- Departamentos
+- Ciudades

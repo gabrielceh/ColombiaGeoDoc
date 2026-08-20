@@ -2,6 +2,10 @@
 sidebar_position: 2
 ---
 
+:::info
+Consulta [Infraestructura y disponibilidad](./infrastructure) para conocer las limitaciones actuales del entorno.
+:::
+
 # Getting Started
 
 Realizar una solicitud a Colombia Geo API es sencillo. Todos los endpoints públicos utilizan HTTP y devuelven información en formato JSON.
