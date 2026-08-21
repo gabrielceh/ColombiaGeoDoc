@@ -3,28 +3,27 @@ sidebar_position: 2
 ---
 import HttpMethod from '@site/src/components/Shared/HttpMethod';
 
-# Ciudades
+# Cities
 
-Los endpoints de **Cities** permiten consultar información de las ciudades y municipios de Colombia, incluyendo su departamento, código DANE, código postal, población, área, capitalidad y características de distrito.
+The **Cities** endpoints allow you to retrieve information about the cities and municipalities of Colombia, including their department, DANE code, postal code, population, area, capital status, and district characteristics.
 
 ---
 
-## Obtener ciudad por ID
+## Get city by ID
 
-Obtiene información detallada de una ciudad utilizando su identificador único.
+Retrieves detailed information about a city using its unique identifier.
 
 ### Endpoint
 
 <HttpMethod method="GET">/cities/:id</HttpMethod>
 
+### Parameters
 
-### Parámetros
+| Parameter | Type | Required | Description                   |
+|-----------|------|----------|-------------------------------|
+| `id`      | UUID | Yes      | Unique identifier of the city |
 
-|Parámetro|Tipo|Requerido|Descripción                     |
-|---------|----|---------|--------------------------------|
-|`id`     |UUID|Sí       |Identificador único de la ciudad|
-
-### Ejemplo
+### Example
 
 ```http
 GET /cities/7b672475-1afc-4617-b118-c2b8efd61709
@@ -61,9 +60,9 @@ GET /cities/7b672475-1afc-4617-b118-c2b8efd61709
 
 ---
 
-## Obtener ciudades por departamento ID
+## Get cities by department ID
 
-Obtiene todas las ciudades pertenecientes a un departamento específico.
+Retrieves all cities belonging to a specific department.
 
 ### Endpoint
 
@@ -72,17 +71,17 @@ Obtiene todas las ciudades pertenecientes a un departamento específico.
 
 ### Parámetros
 
-|Parámetro     |Tipo |Requerido |Descripción                    |
-|--------------|-----|----------|-------------------------------|
-|`departmentId`|UUID |Sí        |Identificador del departamento |
+|Parameters   |Type|Required |Description                        |
+|-------------|----|---------|-----------------------------------|
+|`departmenId`|UUID|Sí       |Unique identifier of the department|  
 
-### Ejemplo
+### Example
 
 ```http
 GET /cities/department/7b672475-1afc-4617-b118-c2b8efd61709
 ```
 
-### Respuesta
+### Response
 
 ```json
 {
@@ -102,32 +101,32 @@ GET /cities/department/7b672475-1afc-4617-b118-c2b8efd61709
 
 ---
 
-## Obtener ciudades por departamento ID paginadas
+## Get cities by department ID with pagination
 
-Permite obtener las ciudades de un departamento utilizando paginación y ordenamiento.
+Retrieves the cities of a department using pagination and sorting.
 
 ### Endpoint
 
 <HttpMethod method="GET">/cities/paged/department/:departmentId</HttpMethod>
 
 
-### Parámetros
+### Parameters
 
-|Parámetro      |Tipo   |Requerido|Descripción                      | 
-|---------------|-------|---------|---------------------------------|
-|`departmentId` |UUID   |Sí       |Identificador del departamento   |
-|`page`         |integer|No       |Número de página                 |
-|`pageSize`     |integer|No       |Cantidad de resultados por página|
-|`sortBy`       |string |No       |Campo utilizado para ordenar     |
-|`sortDirection`|string |No       |Dirección del ordenamiento       |
+| Parameter       | Type    | Required  | Description                          |
+| --------------- | ------- | --------- | ------------------------------------ |
+|`departmenId`    |UUID     |Sí         |Unique identifier of the department   |
+| `page`          | integer | No        | Page number                          |
+| `pageSize`      | integer | No        | Number of items per page             |
+| `sortBy`        | string  | No        | Field used for sorting               |
+| `sortDirection` | string  | No        | Sort direction: `asc / desc`         |
 
-### Ejemplo
+### Example
 
 ```http
 GET /cities/paged/department/7b672475-1afc-4617-b118-c2b8efd61709?page=1&pageSize=10&sortBy=name&sortDirection=asc
 ```
 
-### Respuesta
+### Response
 
 ```json
 {
@@ -165,31 +164,31 @@ GET /cities/paged/department/7b672475-1afc-4617-b118-c2b8efd61709?page=1&pageSiz
 
 ---
 
-## Obtener todas las ciudades paginadas
+## Get all cities with pagination
 
-Obtiene todas las ciudades disponibles utilizando paginación.
+Retrieves all available cities using pagination.
 
 ### Endpoint
 
 <HttpMethod method="GET">/cities/paged</HttpMethod>
 
 
-### Parámetros
+### Parameters
 
-|Parámetro      |Tipo    |Requerido |Descripción                             |
-|---------------|--------|----------|----------------------------------------|
-|`page`         |integer |No        |Número de página                        |
-|`pageSize`     |integer |No        |Cantidad de resultados por página       |
-|`sortBy`       |string  |No        |Campo utilizado para ordenar            |
-|`sortDirection`|string  |No        |Dirección del ordenamiento `asc / desc` |
+| Parameter       | Type    | Required  | Description                  |
+| --------------- | ------- | --------- | -----------------------------|
+| `page`          | integer | No        | Page number                  | 
+| `pageSize`      | integer | No        | Number of items per page     |
+| `sortBy`        | string  | No        | Field used for sorting       |
+| `sortDirection` | string  | No        | Sort direction: `asc / desc` |
 
-### Ejemplo
+### Example
 
 ```http
 GET /cities/paged?page=1&pageSize=20&sortBy=name&sortDirection=asc
 ```
 
-### Respuesta
+### Response
 
 ```json
 {
@@ -227,21 +226,21 @@ GET /cities/paged?page=1&pageSize=20&sortBy=name&sortDirection=asc
 
 ---
 
-## Obtener todos los distritos
+## Get all districts
 
-Obtiene las ciudades que tienen la condición de distrito.
+Retrieves the cities that are designated as districts.
 
 ### Endpoint
 
 <HttpMethod method="GET">/cities/districts</HttpMethod>
 
-### Ejemplo
+### Example
 
 ```http
 GET /cities/districts?page=1&pageSize=10&sortBy=population&sortDirection=asc
 ```
 
-### Respuesta
+### Response
 
 ```json
 {
@@ -278,21 +277,21 @@ GET /cities/districts?page=1&pageSize=10&sortBy=population&sortDirection=asc
 ```
 ---
 
-## Obtener todas las ciudades capitales
+## Get all department capitals
 
-Obtiene todas las ciudades que están marcadas como capitales de departamento.
+Retrieves all cities that are designated as department capitals.
 
 ### Endpoint
 
 <HttpMethod method="GET">/cities/capitals</HttpMethod>
 
-### Ejemplo
+### Example
 
 ```http
 GET /cities/capitals?page=1&pageSize=10&sortBy=population&sortDirection=asc
 ```
 
-### Respuesta
+### Response
 
 ```json
 {
@@ -330,9 +329,9 @@ GET /cities/capitals?page=1&pageSize=10&sortBy=population&sortDirection=asc
 
 ---
 
-## Buscar ciudades
+## Search cities
 
-Permite buscar ciudades utilizando su nombre o código DANE.
+Allows you to search for cities using their name or DANE code.
 
 ### Endpoint
 
@@ -340,25 +339,26 @@ Permite buscar ciudades utilizando su nombre o código DANE.
 
 ### Query parameters
 
-|Parámetro|Tipo  |Requerido|Descripción                      |
-|---------|------|---------|---------------------------------|
-|`value`  |string|Sí       |Nombre o código DANE de la ciudad|
+|Parameter|Type  |Required |Description           |
+|---------|------|---------|----------------------|
+|`value`  |string|Yes      |City name or DANE code|
 
-### Ejemplo
+### Example
 
-Buscar por nombre:
+Search by name:
 
 ```http
 GET /cities/search?value=Barranquilla&pageSize=20&page=1&sortBy=population&sortDirection=desc
 ```
 
-Buscar por código DANE:
+Search by DANE code:
 
 ```http
 GET /cities/search?value=001&pageSize=20&page=1&sortBy=population&sortDirection=desc
 ```
 
-### Respuesta
+### Response
+
 ```json
 {
   "data": [
@@ -388,29 +388,31 @@ GET /cities/search?value=001&pageSize=20&page=1&sortBy=population&sortDirection=
 ```
 ---
 
-## Parámetros de ordenamiento
+## Sorting parameters
 
-Los endpoints paginados permiten ordenar los resultados mediante `sortBy` y `sortDirection`.
+Paginated endpoints allow you to sort results using sortBy and sortDirection.
 
 ### `sortDirection`
 
-|Valor |Descripción      |
-|------|-----------------|
-|`asc` |Orden ascendente |
-|`desc`|Orden descendente|
+| Value  | Description      |
+| ------ | ---------------- |
+| `asc`  | Ascending order  |
+| `desc` | Descending order |
+
 
 ### `sortBy`
 
-Los campos disponibles dependen de los criterios implementados por el endpoint.
+The available fields depend on the sorting criteria implemented by each endpoint.
 
-|Parámetro       |Descripción                         |
-|----------------|------------------------------------|
-|`name`          |Ordenar por nombre                  |
-|`daneCode`      |Ordenar por código DANE             |
-|`population`    |Ordenar por población               |
-|`area`          |Ordenar por área                    |
+| Parameter    | Description        |
+| ------------ | ------------------ |
+| `name`       | Sort by name       |
+| `daneCode`   | Sort by DANE code  |
+| `population` | Sort by population |
+| `area`       | Sort by area       |
 
-Ejemplo:
+
+Example:
 
 ```http
 GET /cities/paged?page=1&pageSize=10&sortBy=population&sortDirection=desc
@@ -418,12 +420,12 @@ GET /cities/paged?page=1&pageSize=10&sortBy=population&sortDirection=desc
 
 ---
 
-## Códigos de estado HTTP
+## HTTP status codes
 
-|Código|Descripción                        |
-|------|-----------------------------------|
-|`200` |Solicitud procesada correctamente  |
-|`400` |Solicitud inválida                 |
-|`404` |Ciudad o departamento no encontrado|
-|`429` |Límite de solicitudes excedido     |
-|`500` |Error interno del servidor         |
+| Code  | Description                    |
+| ----- | ------------------------------ |
+| `200` | Request completed successfully |
+| `400` | Invalid request                |
+| `404` | City or department not found   |
+| `429` | Too many requests              |
+| `500` | Internal server error          |
