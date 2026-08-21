@@ -1,0 +1,41 @@
+---
+sidebar_position: 3
+---
+import HttpMethod from '@site/src/components/Shared/HttpMethod';
+
+# Search
+
+Colombia Geo API allows you to search for cities using their name or DANE code.
+
+The search is performed using the `value` parameter.
+
+## Search cities
+
+### Endpoint
+
+<HttpMethod method="GET">/cities/search</HttpMethod>
+
+### Parameter
+
+| Parameter | Type   | Required | Description            |
+|-----------|--------|----------|------------------------|
+| `value`   | string | Yes      | City name or DANE code |
+
+### By name
+
+```http
+GET /cities/search?value=Barranquilla
+```
+
+### By DANE code
+
+```
+GET /cities/search?value=08001
+```
+
+## Notaes
+
+- The search accepts city names or DANE codes.
+- The value parameter is required.
+- Results are returned in JSON format.
+- These endpoints are public and do not require authentication.
