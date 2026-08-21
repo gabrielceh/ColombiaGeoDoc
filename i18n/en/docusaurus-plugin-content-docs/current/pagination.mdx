@@ -1,0 +1,176 @@
+---
+sidebar_position: 4
+---
+
+# Pagination and Sorting
+
+The paginated endpoints of Colombia Geo API allow you to control the number of results returned and the order in which they are presented.
+
+This is especially useful when working with large amounts of city or department data.
+
+## Pagination parameters
+
+Paginated endpoints use the following parameters:
+
+| Parameter  | Type    | Default value | Description              |
+|------------|---------|---------------|--------------------------|
+| `page`     | integer | `1`           | Page number to retrieve  |
+| `pageSize` | integer | `20`          | Number of items per page |
+
+### `page`
+
+Indicates which page of results you want to retrieve.
+
+```http
+GET /cities/paged?page=2
+```
+
+In this example, the second page is requested.
+
+### `pageSize`
+
+Indicates how many items each page can contain.
+
+```http
+GET /cities/paged?page=1&pageSize=10
+```
+
+In this example, up to 10 items per page are requested.
+
+Use an appropriate pageSize to avoid unnecessarily large responses.
+
+---
+
+## Sorting
+
+In addition to pagination, the endpoints allow you to sort the results.
+
+Two parameters are used:
+
+| Parameter       | Type   | Description            |
+| --------------- | ------ | ---------------------- |
+| `sortBy`        | string | Field used for sorting |
+| `sortDirection` | string | Sort direction         |
+
+
+## `sortDirection`
+
+Accepts two values:
+
+| Value  | Description      |
+| ------ | ---------------- |
+| `asc`  | Ascending order  |
+| `desc` | Descending order |
+
+
+### Ascending example
+
+```http
+GET /cities/paged?page=1&pageSize=10&sortBy=name&sortDirection=asc
+```
+
+The results are sorted in ascending order by name.
+
+### Descending example
+
+```http
+GET /cities/paged?page=1&pageSize=10&sortBy=population&sortDirection=desc
+```
+
+The results are sorted from highest to lowest population.
+
+---
+
+## `sortBy`
+
+The sortBy value determines the field used to sort the results.
+
+### Departments
+
+The available fields are:
+
+| Value            | Description              |
+| ---------------- | ------------------------ |
+| `name`           | Department name          |
+| `daneCode`       | DANE code                |
+| `population`     | Population               |
+| `area`           | Area                     |
+| `municipalities` | Number of municipalities |
+
+
+### Cities
+
+The available fields depend on the endpoint and the sorting criteria implemented.
+
+They include:
+
+| Value        | Description |
+| ------------ | ----------- |
+| `name`       | City name   |
+| `daneCode`   | DANE code   |
+| `population` | Population  |
+| `area`       | Area        |
+
+
+The available sortBy values may vary depending on the resource being queried.
+
+---
+
+## Full example
+
+You can combine all parameters:
+
+```http
+GET /cities/paged?page=2&pageSize=10&sortBy=population&sortDirection=desc
+```
+
+This request:
+
+1. Retrieves the second page.
+2. Requests up to 10 cities.
+3. Sorts by population.
+4. Sorts from highest to lowest.
+
+## Paginated response
+
+Paginated responses contain additional information about the state of the query.
+
+```json
+{
+  "data": {
+    "items": [...],
+    "page": 1,
+    "pageSize": 10,
+    "totalCount": 1100,
+    "totalPages": 110
+  },
+  "message": "Request completed successfully",
+  "statusCode": 200
+}
+```
+
+### Properties
+
+| Property     | Description                             |
+| ------------ | --------------------------------------- |
+| `items`      | Items corresponding to the current page |
+| `page`       | Current page                            |
+| `pageSize`   | Number of items requested per page      |
+| `totalCount` | Total number of items                   |
+| `totalPages` | Total number of pages                   |
+
+
+## Paginated resources
+
+Actualmente puedes utilizar paginación en:
+
+Pagination is currently available for:
+
+- Departments
+- Cities
+- Cities by department
+
+Check the documentation for each resource to learn about their specific endpoints:
+
+- Departments
+- Cities
