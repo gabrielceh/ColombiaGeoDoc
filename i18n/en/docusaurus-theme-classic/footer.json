@@ -1,0 +1,42 @@
+{
+  "link.title.Documentación": {
+    "message": "Documentación",
+    "description": "The title of the footer links column with title=Documentación in the footer"
+  },
+  "link.title.API": {
+    "message": "API",
+    "description": "The title of the footer links column with title=API in the footer"
+  },
+  "link.item.label.Introducción": {
+    "message": "Introducción",
+    "description": "The label of footer link with label=Introducción linking to /docs/intro"
+  },
+  "link.item.label.Departamentos": {
+    "message": "Departamentos",
+    "description": "The label of footer link with label=Departamentos linking to /docs/departments"
+  },
+  "link.item.label.Ciudades": {
+    "message": "Ciudades",
+    "description": "The label of footer link with label=Ciudades linking to /docs/cities"
+  },
+  "link.item.label.Búsqueda": {
+    "message": "Búsqueda",
+    "description": "The label of footer link with label=Búsqueda linking to /docs/search"
+  },
+  "link.item.label.Paginación": {
+    "message": "Paginación",
+    "description": "The label of footer link with label=Paginación linking to /docs/pagination"
+  },
+  "link.item.label.Respuestas": {
+    "message": "Respuestas",
+    "description": "The label of footer link with label=Respuestas linking to /docs/responses"
+  },
+  "link.item.label.Infraestructura": {
+    "message": "Infraestructura",
+    "description": "The label of footer link with label=Infraestructura linking to /docs/infrastructure"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 Colombia Geo API. Built with Docusaurus.",
+    "description": "The footer copyright"
+  }
+}

@@ -74,6 +74,11 @@ const config: Config = {
           position: 'left',
           label: 'Documentación',
         },
+        {
+          // selector de idioma
+          type: 'localeDropdown',
+          position: 'right',
+        },
         // {
         //   href: 'https://mis-docs.com',
         //   label: 'API',

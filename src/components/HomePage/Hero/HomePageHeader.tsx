@@ -35,9 +35,9 @@ export function HomepageHeader() {
 
           <Link
             className='button button--secondary button--lg'
-            to='/docs/endpoints'
+            to='/docs/departments'
           >
-            Ver endpoints
+            Ver documentación
           </Link>
         </div>
       </div>
