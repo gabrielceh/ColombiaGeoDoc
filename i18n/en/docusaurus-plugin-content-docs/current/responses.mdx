@@ -1,0 +1,158 @@
+---
+sidebar_position: 5
+---
+
+# Responses
+
+Colombia Geo API uses a consistent response structure to make its endpoints easier to consume.
+
+All responses are returned in **JSON** format.
+
+## General structure
+
+A successful response follows this structure:
+
+```json
+{
+  "data": {},
+  "message": "Request completed successfully",
+  "statusCode": 200
+}
+```
+
+### Properties
+
+| Property     | Type           | Description                             |
+| ------------ | -------------- | --------------------------------------- |
+| `data`       | object / array | Information returned by the endpoint    |
+| `message`    | string         | Descriptive message about the operation |
+| `statusCode` | integer        | HTTP status code                        |
+ 
+
+## Object responses
+
+When an endpoint returns a single resource, data contains an object.
+
+```json
+{
+  "data": {
+    "id": "7b672475-1afc-4617-b118-c2b8efd61709",
+    "daneCode": "08",
+    "name": "Atlántico"
+  },
+  "message": "Department retrieved successfully",
+  "statusCode": 200
+}
+```
+
+## List responses
+
+When an endpoint returns multiple resources, data contains an array.
+
+```json
+{
+  "data": [
+    {
+      "id": "uuid",
+      "daneCode": "05",
+      "name": "Antioquia"
+    },
+    {
+      "id": "uuid",
+      "daneCode": "08",
+      "name": "Atlántico"
+    }
+  ],
+  "message": "Departments retrieved successfully",
+  "statusCode": 200
+}
+```
+
+## Paginated responses
+
+Endpoints that use pagination contain additional information inside data.
+
+```json
+{
+  "data": {
+    "items": [],
+    "page": 1,
+    "pageSize": 20,
+    "totalCount": 32,
+    "totalPages": 2
+  },
+  "message": "Departments retrieved successfully",
+  "statusCode": 200
+}
+```
+
+### Pagination properties
+
+| Property     | Description                             |
+| ------------ | --------------------------------------- |
+| `items`      | Items corresponding to the current page |
+| `page`       | Current page                            |
+| `pageSize`   | Number of items requested per page      |
+| `totalCount` | Total number of items                   |
+| `totalPages` | Total number of pages                   |
+
+
+For more information, see [Pagination and Sorting](/en/docs/pagination).
+
+## Error responses
+
+When an error occurs, the API maintains the same general response structure.
+
+```json
+{
+  "data": null,
+  "message": "Department not found",
+  "statusCode": 404
+}
+```
+
+This allows successful responses and errors to be handled using a predictable structure.
+
+## HTTP status codes
+
+The API uses standard HTTP status codes to indicate the result of each request.
+
+| Code  | Meaning                        |
+| ----- | ------------------------------ |
+| `200` | Request completed successfully |
+| `400` | Invalid request                |
+| `401` | Not authenticated              |
+| `403` | Not authorized                 |
+| `404` | Resource not found             |
+| `409` | Conflict                       |
+| `429` | Too many requests              |
+| `500` | Internal server error          |
+
+
+Available status codes may vary depending on the endpoint and the operation performed.
+
+## Recommended handling
+
+When consuming the API, it is recommended to check both the HTTP status code and the response content.
+
+For example:
+
+```js
+const response = await fetch(
+  'https://colombiageoapi.onrender.com/api/v1/departments'
+);
+const result = await response.json();
+
+if (!response.ok) {
+  console.error(result.message);
+  return;
+}
+console.log(result.data);
+```
+
+This allows you to use:
+
+- `response.status` to get the HTTP status code.
+- `result.data` to access the returned data.
+- `result.message` to get descriptive information about the operation.
+- `result.statusCode` as the status code represented within the response.
