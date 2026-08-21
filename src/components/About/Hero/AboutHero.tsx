@@ -16,8 +16,6 @@ export function AboutHero({ lang }: AboutHeroProps): ReactNode {
       badge: 'Desarrollador de software',
       title: 'Hola, soy Gabriel Cervantes',
       role: 'Full Stack Developer',
-      description:
-        'Me apasiona construir aplicaciones web y APIs modernas, con especial interés en arquitectura, buenas prácticas de desarrollo y seguridad.',
       linkedin: 'LinkedIn',
       github: 'GitHub',
       website: 'Mi web',
@@ -26,8 +24,6 @@ export function AboutHero({ lang }: AboutHeroProps): ReactNode {
       badge: 'Software Developer',
       title: 'Hi, I’m Gabriel Cervantes',
       role: 'Full Stack Developer',
-      description:
-        'I enjoy building modern web applications and APIs, with a strong interest in architecture, software development best practices, and security.',
       linkedin: 'LinkedIn',
       github: 'GitHub',
       website: 'My website',
@@ -55,10 +51,6 @@ export function AboutHero({ lang }: AboutHeroProps): ReactNode {
         <p className={styles.role}>
           {text.role}
         </p>
-
-        {/* <p className={styles.subtitle}>
-          {text.description}
-        </p> */}
 
         <div className={styles.buttons}>
           <Link

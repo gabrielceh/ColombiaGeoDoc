@@ -82,11 +82,16 @@ const config: Config = {
           type: 'localeDropdown',
           position: 'right',
         },
-        // {
-        //   href: 'https://mis-docs.com',
-        //   label: 'API',
-        //   position: 'right',
-        // },
+        {
+          to: '/about',
+          label: 'Sobre mí',
+          position: 'left',
+        },
+        {
+          href: 'https://github.com/gabrielceh/ColombiaGeoApi',
+          label: 'GitHub',
+          position: 'right',
+        },
       ],
     },
     footer: {
@@ -127,6 +132,23 @@ const config: Config = {
             {
               label: 'Infraestructura',
               to: '/docs/infrastructure',
+            },
+          ],
+        },
+        {
+          title: 'Social',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/gabrielceh/ColombiaGeoApi',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/in/gabriel-cervantes-hurtado',
+            },
+            {
+              label: 'Sitio web',
+              href: 'https://gabrielcervantes.vercel.app/',
             },
           ],
         },

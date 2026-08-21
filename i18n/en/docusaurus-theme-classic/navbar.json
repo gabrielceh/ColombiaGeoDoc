@@ -12,5 +12,9 @@
   "item.label.Documentación": {
     "message": "Documentation",
     "description": "Navbar item with label Documentation"
+  },
+  "item.label.Sobre mí": {
+    "message": "About me",
+    "description": "Navbar item with label About me"
   }
 }

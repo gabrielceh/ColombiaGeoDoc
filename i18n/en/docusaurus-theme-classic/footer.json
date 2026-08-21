@@ -44,6 +44,11 @@
     "description": "The label of footer link with label=Infrastructure linking to /docs/infrastructure"
   },
 
+  "link.item.label.Sitio web": {
+    "message": "Website",
+    "description": "The label of footer link with label=Website linking to https://gabrielcervantes.vercel.app/"
+  },
+
   "copyright": {
     "message": "Copyright © 2026 Colombia Geo API. Built with Docusaurus.",
     "description": "The footer copyright"

@@ -4,12 +4,12 @@ import Layout from '@theme/Layout';
 import { AboutHero } from '../components/About/Hero/AboutHero';
 import { AboutMe } from '../components/About/AboutMe/AboutMe';
 import { Technologies } from '../components/About/Technologies/Technologies';
+import { Project } from '../components/About/Project/Project';
 
 export default function About(): ReactNode {
   const { i18n } = useDocusaurusContext();
 
   const lang = i18n.currentLocale === 'en' ? 'en' : 'es';
-
 
   const text = content[lang];
 
@@ -19,6 +19,7 @@ export default function About(): ReactNode {
         <AboutHero lang={lang} />
         <AboutMe lang={lang} />
         <Technologies lang={lang} />
+        <Project lang={lang} />
       </main>
     </Layout>
   );
