@@ -9,9 +9,22 @@ import { InfrastructureNotice } from '../components/HomePage/InfrastructureNotic
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
+  const { i18n } = useDocusaurusContext();
+  const lang = i18n.currentLocale === 'en' ? 'en' : 'es';
+  const content = {
+    es: {
+      title: siteConfig.title,
+      description: siteConfig.tagline,
+    },
+    en: {
+      title: 'Colombia REST API',
+      description:
+        'REST API for geographic data from Colombia. Query departments, cities, and municipalities quickly and easily.',
+    },
+  };
 
   return (
-    <Layout title='API REST de Colombia' description={siteConfig.tagline}>
+    <Layout title={content[lang].title} description={content[lang].description}>
       <HomepageHeader />
 
       <main>
@@ -22,3 +35,6 @@ export default function Home(): ReactNode {
     </Layout>
   );
 }
+
+
+

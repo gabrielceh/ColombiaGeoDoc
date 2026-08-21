@@ -6,7 +6,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Colombia Geo API',
-  tagline: 'API REST de departamentos y ciudades de Colombia',
+  tagline:
+    'API REST de datos geográficos de Colombia. Consulta departamentos, ciudades y municipios de forma rápida, sencilla y accesible.',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -15,15 +16,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://colombia-geo-docs.netlify.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'gabrielceh', // Usually your GitHub org/user name.
-  projectName: 'colombia-geo-docs', // Usually your repo name.
+  // organizationName: 'gabrielceh', // Usually your GitHub org/user name.
+  // projectName: 'colombia-geo-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -56,7 +57,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/colombia-geo-doc-social-card.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
