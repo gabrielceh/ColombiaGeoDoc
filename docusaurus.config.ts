@@ -74,11 +74,11 @@ const config: Config = {
           position: 'left',
           label: 'Documentación',
         },
-        {
-          href: 'https://mis-docs.com',
-          label: 'API',
-          position: 'right',
-        },
+        // {
+        //   href: 'https://mis-docs.com',
+        //   label: 'API',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
@@ -105,12 +105,20 @@ const config: Config = {
           title: 'API',
           items: [
             {
-              label: 'Endpoints',
-              to: '/docs/endpoints',
+              label: 'Búsqueda',
+              to: '/docs/search',
+            },
+            {
+              label: 'Paginación',
+              to: '/docs/pagination',
             },
             {
               label: 'Respuestas',
               to: '/docs/responses',
+            },
+            {
+              label: 'Infraestructura',
+              to: '/docs/infrastructure',
             },
           ],
         },
