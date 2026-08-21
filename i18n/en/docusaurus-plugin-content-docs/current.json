@@ -8,11 +8,11 @@
     "description": "The label for category 'Getting Started' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Recursos": {
-    "message": "Recursos",
+    "message": "Resources",
     "description": "The label for category 'Recursos' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Guias": {
-    "message": "Guias",
+    "message": "Guides",
     "description": "The label for category 'Guias' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Reference": {
