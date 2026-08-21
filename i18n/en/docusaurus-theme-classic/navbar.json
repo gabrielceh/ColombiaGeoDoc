@@ -3,12 +3,14 @@
     "message": "Colombia Geo API",
     "description": "The title in the navbar"
   },
+
   "logo.alt": {
     "message": "Colombia Geo API",
     "description": "The alt text of navbar logo"
   },
+
   "item.label.Documentación": {
-    "message": "Documentación",
-    "description": "Navbar item with label Documentación"
+    "message": "Documentation",
+    "description": "Navbar item with label Documentation"
   }
 }
