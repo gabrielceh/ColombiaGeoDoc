@@ -1,0 +1,71 @@
+.section {
+  padding: 100px 24px;
+  border-top: 1px solid var(--geo-border-color);
+  background: var(--ifm-background-surface-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.label {
+  padding-top: 8px;
+  color: var(--ifm-color-primary);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.content h2 {
+  margin: 0;
+  color: var(--geo-text-color);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.paragraphs {
+  margin-top: 28px;
+}
+
+.paragraphs p {
+  margin: 0 0 18px;
+  color: var(--geo-muted-color);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.paragraphs p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 80px 20px;
+  }
+
+  .container {
+    display: block;
+  }
+
+  .label {
+    margin-bottom: 28px;
+  }
+
+  .content h2 {
+    font-size: 32px;
+  }
+
+  .paragraphs p {
+    font-size: 16px;
+  }
+}
